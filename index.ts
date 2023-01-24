@@ -9,6 +9,7 @@ import { Game } from "./Game";
 import { Move } from "@shared/Move";
 import { makeMove } from "./handlers/makeMove";
 import { challenge } from "./handlers/challenge";
+import {join} from "path"
 
 config();
 
@@ -17,11 +18,9 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 const httpServer = createServer(app);
 
-export const io = new Server(httpServer, {
-  cors: {
-    origin: "*",
-  },
-});
+export const io = new Server(httpServer);
+
+app.use(express.static(join(__dirname, "./client")));
 
 io.on("connect", (socket) => {
 
