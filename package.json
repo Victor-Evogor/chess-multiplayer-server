@@ -1,14 +1,14 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A chess multiplayer server",
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon --exec ts-node index.ts",
     "start": "ts-node index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Victor Evogor",
   "license": "ISC",
   "dependencies": {
     "@types/dotenv": "^8.2.0",
